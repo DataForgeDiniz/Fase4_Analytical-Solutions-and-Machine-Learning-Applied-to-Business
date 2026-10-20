@@ -1,0 +1,15 @@
+tema,descricao,palavras_gatilho
+Qualidade e acabamento,"Percepção de qualidade, material e construção",quality|build|sturdy|material|premium|solid|flimsy|plastic|finish
+Custo-benefício,"Preço justo, valor pelo dinheiro",value for money|worth|price|budget|affordable|cheap|money|vfm|costly|expensive
+Defeito e durabilidade,"Parou de funcionar, quebrou, veio com defeito",stopped working|not working|defective|damaged?|broke|faulty|dead|died|waste|worst|within (a|one|two|\d+) (week|month|day)s?|lasting|durab|long lasting|fail
+Carregamento e energia,"Velocidade de carga, carregador, potência",charg|watt|\d+w|power|current
+Bateria,Duração e autonomia da bateria,battery|backup|drain
+Som e áudio,"Qualidade sonora, graves, microfone",sound|bass|audio|volume|mic|microphone|noise|speaker
+Tela e imagem,"Display, resolução, brilho, imagem",display|screen|picture|brightness|resolution|image|colou?rs? (are|is)
+Conectividade,"Bluetooth, Wi-Fi, pareamento, compatibilidade",bluetooth|wi-?fi|connect|pair|compatib|signal|network
+Desempenho,"Velocidade, funcionamento, performance",performance|speed|fast|slow|lag|works? (well|fine|perfectly|great|good)|working (fine|well|good)
+Facilidade de uso,"Instalação, configuração, praticidade",easy|install|setup|set up|user friendly|convenient|handy|simple
+Design e tamanho,"Aparência, tamanho, comprimento, cor",design|looks?|size|compact|length|colou?r|stylish|weight|light ?weight|fit
+Entrega e embalagem,"Prazo de entrega, embalagem, estado de chegada",delivery|delivered|packag|packing|box|shipping|arrived
+Atendimento e garantia,"Suporte, garantia, troca, devolução",service|warranty|guarantee|support|return|refund|replace|customer care
+Aquecimento,Superaquecimento do produto,heat|hot|temperature|warm

@@ -1,0 +1,246 @@
+== KPIs gerais
+produtos=1351 cat_n1=9 subcat=207
+nota média=4.092 mediana=4.1 ponderada=4.161
+total avaliações=23,802,463 mediana=4,736 média=17,618
+desconto médio=0.467 mediano=0.490 ponderado preço=0.419
+% produtos desconto>=50%=0.490  >=70%=0.156
+preço original médio=5,691 c/ desc médio=3,305 mediana orig=1,790
+% nota>=4=0.748 % nota<3.5=0.030 min=2.0 max=5.0
+concentração: top10% produtos = 0.615 das avaliações
+sentimento trechos: {'Positivo': 0.61, 'Neutro': 0.275, 'Negativo': 0.115}
+
+== Categoria nível 1
+                       produtos   nota        aval   desc      preco  share_aval
+cat_n1                                                                          
+Electronics                 490  4.078  14208441.0  0.499  10418.084       0.597
+Computers&Accessories       375  4.154   6335182.0  0.532   1855.346       0.266
+Home&Kitchen                448  4.041   2991069.0  0.401   4162.074       0.126
+OfficeProducts               31  4.310    149675.0  0.124    397.194       0.006
+MusicalInstruments            2  3.900     88882.0  0.460   1347.000       0.004
+Toys&Games                    1  4.300     15867.0  0.000    150.000       0.001
+HomeImprovement               2  4.250      8566.0  0.575    799.000       0.000
+Health&PersonalCare           1  4.000      3663.0  0.530   1900.000       0.000
+Car&Motorbike                 1  3.800      1118.0  0.420   4000.000       0.000
+
+== Subcategorias (>=10 produtos)
+                     produtos   nota       aval   desc    preco
+subcategoria                                                   
+In-Ear                     51  3.894  4012352.0  0.586   1990.0
+Smartphones                68  4.100  2493269.0  0.233  19249.0
+USBCables                 161  4.147  2221676.0  0.597    899.0
+HDMICables                 21  4.276  1455967.0  0.595    900.0
+SmartWatches               62  4.008  1227989.0  0.697   7990.0
+MicroSD                    10  4.360   873673.0  0.571   1849.5
+PenDrives                  10  4.260   774744.0  0.569   1450.0
+SmartTelevisions           60  4.207   686767.0  0.381  35499.5
+WirelessUSBAdapters        14  4.093   671975.0  0.484   1273.5
+PowerBanks                 11  4.127   670132.0  0.389   2499.0
+Mice                       24  4.288   407289.0  0.420    997.5
+ElectricKettles            19  4.032   322958.0  0.390   1699.0
+MixerGrinders              27  4.011   318321.0  0.440   4999.0
+DryIrons                   24  4.129   258512.0  0.342   1095.0
+InductionCooktop           10  4.050   169167.0  0.449   3767.5
+Keyboard&MouseSets         10  4.050   161991.0  0.321   1895.0
+Stands                     11  4.155   157104.0  0.758    499.0
+InstantWaterHeaters        23  4.052   143743.0  0.480   4590.0
+CeilingFans                11  4.109   110015.0  0.382   3045.0
+Lapdesks                   14  4.064   107177.0  0.589   1724.0
+-- piores notas:
+                          produtos   nota       aval   desc   preco
+subcategoria                                                       
+RemoteControls                  49  3.800    34485.0  0.595   899.0
+FanHeaters                      20  3.810    35746.0  0.424  2000.0
+ElectricHeaters                 20  3.890    26811.0  0.360  2299.5
+JuicerMixerGrinders             12  3.892    64060.0  0.442  4899.5
+In-Ear                          51  3.894  4012352.0  0.586  1990.0
+WaterPurifierAccessories        11  3.918    25794.0  0.408   699.0
+Kettle&ToasterSets              13  3.962    68465.0  0.442  1899.0
+GraphicTablets                  11  3.982    37958.0  0.608   999.0
+-- melhores notas:
+                        produtos   nota       aval   desc    preco
+subcategoria                                                      
+MicroSD                       10  4.360   873673.0  0.571   1849.5
+ScreenProtectors              12  4.350    83306.0  0.656   1499.0
+EggBoilers                    11  4.291    29443.0  0.529   1599.0
+Mice                          24  4.288   407289.0  0.420    997.5
+HDMICables                    21  4.276  1455967.0  0.595    900.0
+PenDrives                     10  4.260   774744.0  0.569   1450.0
+SmartTelevisions              60  4.207   686767.0  0.381  35499.5
+WaterFilters&Purifiers        12  4.175    78109.0  0.425  17245.0
+-- maior desconto:
+                  produtos   nota       aval   desc   preco
+subcategoria                                               
+Stands                  11  4.155   157104.0  0.758   499.0
+SmartWatches            62  4.008  1227989.0  0.697  7990.0
+ScreenProtectors        12  4.350    83306.0  0.656  1499.0
+GraphicTablets          11  3.982    37958.0  0.608   999.0
+USBCables              161  4.147  2221676.0  0.597   899.0
+HDMICables              21  4.276  1455967.0  0.595   900.0
+RemoteControls          49  3.800    34485.0  0.595   899.0
+Lapdesks                14  4.064   107177.0  0.589  1724.0
+
+== Desconto x nota / engajamento
+corr desconto-nota -0.162 | spearman -0.15
+corr desconto-log(aval) -0.14
+corr preço-nota 0.068 | log preço-log aval 0.1
+corr log aval-nota 0.243
+                produtos   nota  aval_med   preco  pct_baixa
+faixa_desconto                                              
+0-20%                176  4.169    6636.5  1063.5      0.165
+21-40%               329  4.126    7241.0  3045.0      0.198
+41-60%               469  4.071    3025.0  1899.0      0.284
+61-80%               327  4.065    4145.0  1299.0      0.281
+81%+                  50  3.974    3811.5  1499.0      0.420
+                  produtos   nota  aval_med   desc
+faixa_preco                                       
+Até ₹500               183  4.066    4308.0  0.385
+₹500 a ₹1 mil          282  4.085    2991.0  0.534
+₹1 mil a ₹5 mil        578  4.082    4719.5  0.479
+₹5 mil a ₹20 mil       213  4.087    7148.0  0.463
+Acima de ₹20 mil        95  4.232    7298.0  0.359
+faixa_desconto         0-20%  21-40%  41-60%  61-80%  81%+
+cat_n1                                                    
+Electronics               50     118     147     145    30
+Computers&Accessories     28      67     126     136    18
+Home&Kitchen              72     140     189      45     2
+OfficeProducts            25       3       2       1     0
+
+== Quadrantes (corte: mediana de avaliações e nota 4,0)
+                    produtos   nota        aval   desc  share_aval
+quadrante                                                         
+Campeões                 564  4.222  19996375.0  0.429       0.840
+Em observação            229  3.665    261876.0  0.527       0.011
+Joias escondidas         446  4.225    747751.0  0.476       0.031
+Risco de reputação       112  3.777   2796461.0  0.499       0.117 
+mediana aval: 4736.0
+-- Risco de reputação (mais avaliações):
+                                                                                                                                                                                                product_name       subcategoria  nota  qtd_avaliacoes  desconto_pct  preco_desconto
+591                     boAt Airdopes 121v2 in-Ear True Wireless Earbuds with Upto 14 Hours Playback, 8MM Drivers, Battery Indicators, Lightweight Earbuds & Multifunction Controls (Active Black, with Mic)             In-Ear   3.8        180998.0          0.57          1299.0
+585           boAt Airdopes 141 Bluetooth Truly Wireless in Ear Earbuds with mic, 42H Playtime, Beast Mode(Low Latency Upto 80ms) for Gaming, ENx Tech, ASAP Charge, IWP, IPX4 Water Resistance (Bold Black)             In-Ear   3.9        136954.0          0.67          1499.0
+1022              Pigeon by Stovekraft Amaze Plus Electric Kettle (14289) with Stainless Steel Body, 1.5 litre, used for boiling Water, making tea and coffee, instant noodles, soup etc. 1500 Watt (Silver)    ElectricKettles   3.9        123365.0          0.48           649.0
+656                                                                  Boult Audio Probass Curve Bluetooth Wireless in Ear Earphones with Mic with Ipx5 Water Resistant, 12H Battery Life & Extra Bass (Black)             In-Ear   3.8        103052.0          0.80           899.0
+601                                                                                     JBL C50HI, Wired in Ear Headphones with Mic, One Button Multi-Function Remote, Lightweight & Comfortable fit (Black)             In-Ear   3.9         92995.0          0.50           499.0
+716   JBL Tune 215BT, 16 Hrs Playtime with Quick Charge, in Ear Bluetooth Wireless Earphones with Mic, 12.5mm Premium Earbuds with Pure Bass, BT 5.0, Dual Pairing, Type C & Voice Assistant Support (Black)             In-Ear   3.7         87798.0          0.50          1499.0
+415     PTron Tangent Lite Bluetooth 5.0 Earphones with Mic, Hi-Fi Stereo Sound Neckband, 8Hrs Playtime, Lightweight Snug-fit in-Ear Headphones, IPX4 Water Resistant, Fast Charge & Voice Assistant (Black)             In-Ear   3.5         83996.0          0.67           599.0
+609                                                                                                  Boult Audio BassBuds X1 in-Ear Wired Earphones with 10mm Extra Bass Driver and HD Sound with mic(Black)             In-Ear   3.9         77027.0          0.67           329.0
+712                                                                 Zebronics ZEB-COUNTY 3W Wireless Bluetooth Portable Speaker With Supporting Carry Handle, USB, SD Card, AUX, FM & Call Function. (Green)  BluetoothSpeakers   3.9         64705.0          0.45           549.0
+1031                                                                                                                                       Prestige Electric Kettle PKOSS - 1500watts, Steel (1.5Ltr), Black    ElectricKettles   3.9         63350.0          0.48           749.0
+-- Joias escondidas (maior nota):
+                                                                                                                                                                                                                                                                      product_name         subcategoria  nota  qtd_avaliacoes  desconto_pct  preco_desconto
+775                                                                                                             Amazon Basics Wireless Mouse | 2.4 GHz Connection, 1600 DPI | Type - C Adapter | Upto 12 Months of Battery Life | Ambidextrous Design | Suitable for PC/Mac/Laptop                 Mice   5.0            23.0          0.50           499.0
+174                                                                                                Syncwire LTG to USB Cable for Fast Charging Compatible with Phone 5/ 5C/ 5S/ 6/ 6S/ 7/8/ X/XR/XS Max/ 11/12/ 13 Series and Pad Air/Mini, Pod & Other Devices (1.1 Meter, White)            USBCables   5.0             5.0          0.80           399.0
+324                                                                                  REDTECH USB-C to Lightning Cable 3.3FT, [Apple MFi Certified] Lightning to Type C Fast Charging Cord Compatible with iPhone 14/13/13 pro/Max/12/11/X/XS/XR/8, Supports Power Delivery - White            USBCables   5.0             0.0          0.75           249.0
+1299                                                                                              Instant Pot Air Fryer, Vortex 2QT, Touch Control Panel, 360° EvenCrisp™ Technology, Uses 95 % less Oil, 4-in-1 Appliance: Air Fry, Roast, Bake, Reheat (Vortex 1.97Litre, Black)            AirFryers   4.8          3964.0          0.75          4995.0
+1201  Oratech Coffee Frother electric, milk frother electric, coffee beater, cappuccino maker, Coffee Foamer, Mocktail Mixer, Coffee Foam Maker, coffee whisker electric, Froth Maker, coffee stirrers electric, coffee frothers, Coffee Blender, (6 Month Warranty) (Multicolour)         HandBlenders   4.8            28.0          0.44           279.0
+1388                                                                            Campfire Spring Chef Prolix Instant Portable Water Heater Geyser 1Ltr. for Use Home Stainless Steel Baking Rack | Restaurant | Office | Labs | Clinics | Saloon | with Installation Kit (With MCB)  InstantWaterHeaters   4.7          2591.0          0.57          1499.0
+1275                                                                                            Multifunctional 2 in 1 Electric Egg Boiling Steamer Egg Frying Pan Egg Boiler Electric Automatic Off with Egg Boiler Machine Non-Stick Electric Egg Frying Pan-Tiger Woods (Multy)           EggBoilers   4.7          2300.0          0.56           699.0
+1223                                                                                           FIGMENT Handheld Milk Frother Rechargeable, 3-Speed Electric Frother for Coffee with 2 Whisks and Coffee Decoration Tool, Coffee Frother Mixer, CRESCENT ENTERPRISES VRW0.50BK (A1)         HandBlenders   4.7          1729.0          0.56           699.0
+1226                                                                                                                                          Zuvexa USB Rechargeable Electric Foam Maker - Handheld Milk Wand Mixer Frother for Hot Milk, Hand Blender Coffee, Egg Beater (Black)         HandBlenders   4.7            54.0          0.62           499.0
+137                                                                       10k 8k 4k HDMI Cable, Certified 48Gbps 1ms Ultra High Speed HDMI 2.1 Cable 4k 120Hz 144Hz 2k 165Hz 8k 60Hz Dynamic HDR ARC eARC DTS:X Compatible for Mac Gaming PC Soundbar TV Monitor Laptop PS5 4 Xbox           HDMICables   4.6          3664.0          0.58           999.0
+-- Top 10 engajamento:
+                                                                                                     product_name subcategoria  nota  qtd_avaliacoes  desconto_pct  preco_desconto
+12                                      AmazonBasics Flexible Premium HDMI Cable (Black, 4K@60Hz, 18Gbps), 3-Foot   HDMICables   4.4        426973.0          0.69           219.0
+65                                                     Amazon Basics High-Speed HDMI Cable, 6 Feet (2-Pack),Black   HDMICables   4.4        426973.0          0.78           309.0
+47                            Amazon Basics High-Speed HDMI Cable, 6 Feet - Supports Ethernet, 3D, 4K video,Black   HDMICables   4.4        426973.0          0.35           309.0
+400                                               boAt Bassheads 100 in Ear Wired Earphones with Mic(Furious Red)       In-Ear   4.1        363713.0          0.62           379.0
+352                                                boAt Bassheads 100 in Ear Wired Earphones with Mic(Taffy Pink)       In-Ear   4.1        363713.0          0.65           349.0
+584                                                   boAt BassHeads 100 in-Ear Wired Headphones with Mic (Black)       In-Ear   4.1        363711.0          0.63           365.0
+371   Redmi 9A Sport (Coral Green, 2GB RAM, 32GB Storage) | 2GHz Octa-core Helio G25 Processor | 5000 mAh Battery  Smartphones   4.1        313836.0          0.24          6499.0
+370                  Redmi 9 Activ (Carbon Black, 4GB RAM, 64GB Storage) | Octa-core Helio G35 | 5000 mAh Battery  Smartphones   4.1        313836.0          0.23          8499.0
+566   Redmi 9A Sport (Coral Green, 3GB RAM, 32GB Storage) | 2GHz Octa-core Helio G25 Processor | 5000 mAh Battery  Smartphones   4.1        313832.0          0.21          7499.0
+473  Redmi 9A Sport (Carbon Black, 2GB RAM, 32GB Storage) | 2GHz Octa-core Helio G25 Processor | 5000 mAh Battery  Smartphones   4.1        313832.0          0.19          6499.0
+-- Top 10 nota bayesiana:
+                                                                                                                                                                              product_name              subcategoria  nota  qtd_avaliacoes  desconto_pct  preco_desconto  nota_bayes
+1145  Swiffer Instant Electric Water Heater Faucet Tap Home-Kitchen Instantaneous Water Heater Tank less for Tap, LED Electric Head Water Heaters Tail Gallon Comfort(3000W) ((Pack of 1))       InstantWaterHeaters   4.8         53803.0          0.28          1439.0    4.742708
+820                                                                                                                                    Redgear MP35 Speed-Type Gaming Mousepad (Black/Red)                  Gamepads   4.6         33434.0          0.46           299.0    4.536951
+447                                                                                                   Spigen EZ Fit Tempered Glass Screen Protector Guard for iPhone 14/13/13 Pro - 2 Pack          ScreenProtectors   4.6         26603.0          0.66           999.0    4.523208
+864                                                                            SanDisk Extreme SD UHS I 64GB Card for 4K Video for DSLR and Mirrorless Cameras 170MB/s Read & 80MB/s Write                   MicroSD   4.5        205052.0          0.48           939.0    4.490786
+40                                                                              AmazonBasics USB 2.0 Cable - A-Male to B-Male - for Personal Computer, Printer- 6 Feet (1.8 Meters), Black                 USBCables   4.5        107687.0          0.70           209.0    4.482806
+810                                                                                                               Crucial BX500 240GB 3D NAND SATA 6.35 cm (2.5-inch) SSD (CT240BX500SSD1)  InternalSolidStateDrives   4.5         92925.0          0.41          1815.0    4.480207
+212                                                           AmazonBasics USB 2.0 Extension Cable for Personal Computer, Printer, 2-Pack - A-Male to A-Female - 3.3 Feet (1 Meter, Black)                 USBCables   4.5         74977.0          0.63           299.0    4.475751
+30                                                                     AmazonBasics USB 2.0 - A-Male to A-Female Extension Cable for Personal Computer, Printer (Black, 9.8 Feet/3 Meters)                 USBCables   4.5         74976.0          0.73           199.0    4.475750
+459                                                                                       Spigen EZ Fit Tempered Glass Screen Protector for iPhone 14 Pro Max - 2 Pack (Sensor Protection)          ScreenProtectors   4.7          7779.0          0.66           999.0    4.469861
+734                                                     Logitech M235 Wireless Mouse, 1000 DPI Optical Tracking, 12 Month Life Battery, Compatible with Windows, Mac, Chromebook/PC/Laptop                      Mice   4.5         54405.0          0.30           699.0    4.467316
+-- Desconto>=70% e nota<4: 75 de 211
+
+== Sentimento por categoria / quadrante
+                       trechos    pos    neg  score
+cat_n1                                             
+Car&Motorbike               25  0.520  0.120  0.217
+Computers&Accessories     8685  0.623  0.102  0.269
+Electronics              13898  0.598  0.126  0.252
+Health&PersonalCare         17  0.588  0.059  0.241
+Home&Kitchen             10133  0.614  0.113  0.263
+HomeImprovement             46  0.630  0.152  0.262
+MusicalInstruments         109  0.495  0.128  0.188
+OfficeProducts             696  0.667  0.078  0.304
+Toys&Games                  26  0.692  0.077  0.323
+                    trechos    pos    neg  score
+quadrante                                       
+Campeões              15511  0.614  0.108  0.266
+Em observação          4744  0.551  0.161  0.204
+Joias escondidas      10260  0.648  0.096  0.291
+Risco de reputação     3120  0.559  0.141  0.221
+                trechos    pos    neg  score
+faixa_desconto                              
+0-20%              4478  0.598  0.120  0.250
+21-40%             9462  0.594  0.121  0.250
+41-60%            10872  0.614  0.118  0.261
+61-80%             7712  0.629  0.100  0.279
+81%+               1111  0.632  0.115  0.272
+corr nota x %neg trechos -0.346 | nota x score 0.361
+                          trechos    neg
+subcategoria                            
+BasicMobiles                  169  0.195
+Keyboard&MouseSets            269  0.167
+WaterPurifierAccessories      211  0.166
+On-Ear                        301  0.156
+WaterFilters&Purifiers        289  0.156
+RemoteControls                906  0.156
+BluetoothSpeakers             216  0.153
+SmartTelevisions             1973  0.153
+Routers                       305  0.148
+FanHeaters                    360  0.144
+-- tema x cat_n1 (% negativo)
+cat_n1                  Electronics  Computers&Accessories  Home&Kitchen
+tema                                                                    
+Aquecimento                   0.298                  0.241         0.137
+Atendimento e garantia        0.247                  0.219         0.249
+Bateria                       0.163                  0.176         0.344
+Carregamento e energia        0.218                  0.141         0.196
+Conectividade                 0.186                  0.163         0.244
+Custo-benefício               0.076                  0.063         0.066
+Defeito e durabilidade        0.455                  0.342         0.568
+Desempenho                    0.154                  0.101         0.083
+Design e tamanho              0.111                  0.130         0.094
+Entrega e embalagem           0.214                  0.258         0.259
+Facilidade de uso             0.118                  0.063         0.064
+Qualidade e acabamento        0.108                  0.099         0.155
+Som e áudio                   0.166                  0.181         0.165
+Tela e imagem                 0.125                  0.139         0.234
+-- temas em produtos com nota<4 vs >=4.3 (share de trechos)
+grupo                    meio  nota<4  nota>=4.3
+tema                                            
+Custo-benefício         0.168   0.166      0.154
+Qualidade e acabamento  0.144   0.144      0.152
+Som e áudio             0.074   0.097      0.045
+Design e tamanho        0.086   0.083      0.093
+Carregamento e energia  0.085   0.071      0.071
+Desempenho              0.087   0.068      0.100
+Facilidade de uso       0.072   0.068      0.098
+Defeito e durabilidade  0.041   0.067      0.045
+Atendimento e garantia  0.045   0.051      0.046
+Conectividade           0.045   0.048      0.052
+Bateria                 0.041   0.043      0.028
+Aquecimento             0.038   0.043      0.024
+Entrega e embalagem     0.029   0.033      0.039
+Tela e imagem           0.047   0.019      0.055
+-- exemplos de trechos negativos sobre defeito:
+9955     I bought this Bosch mixer on 2020 and the motor is not w...
+7015     I even ordered a replacement thinking I got a defective ...
+22456    After filling water full at night by morning it is stopp...
+12195    So strictly be aware of this point.2) The TV I got in of...
+13688    I collect damaged item so i return but not received or r...
+17250    The worst case is if a conductor falls across the expose...
+3237     The replacement order was supposed to be delivered by 26...
+16870    Would recommend the product if you have a backup mouse w...
